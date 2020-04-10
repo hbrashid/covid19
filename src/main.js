@@ -201,7 +201,7 @@ const displayData = (countryIdx,stateIdx,countyIdx) => {
         $("#deathsTotal").html(dataPath.totalDeaths);
         $("#recoveredTotal").html(dataPath.totalRecovered);
         $("#lastUpdate").html(updateStr);
-        $("#areaTitle").html(dataPath.displayName + " Stats");
+        $("#areaTitle").html(dataPath.displayName + " Data");
 }
 
 const getData = () => {
