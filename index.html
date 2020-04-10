@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <style>
+                @font-face {
+                    font-family: 'Roboto', sans-serif;
+                    src: url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+                }
+            
+                body {
+                    background-color: rgb(45, 40, 88);
+                    color: white;
+                    font-family: 'Roboto', sans-serif;
+                }
+                /* Sortable tables */
+                table.sortable {
+                    font-size: 10pt;
+                    width: 100%;
+                    border-collapse: collapse;
+                }
+                table.sortable thead {
+                    background-color:#000;
+                    color: yellow;
+                    font-weight: bold;
+                    cursor: default;
+                }
+            
+                table.sortable tbody tr:nth-child(2n) td {
+                color: lightyellow;
+                padding:10px;
+                background: rgb(45, 40, 88);
+                }
+                table.sortable tbody tr:nth-child(2n+1) td {
+                background: rgb(69, 62, 133);
+                padding:10px;
+            }
+                #bannerDiv {
+                    width:90%;
+                    margin-left: auto;
+                    margin-right: auto;
+                    margin-top: 10px;
+                    margin-bottom: 20px;
+                    border:1px solid black;
+                    -webkit-box-shadow: 5px 5px 7px 0px rgba(0,0,0,0.75); 
+                    background-color:rgb(69, 62, 133);
+                    border-radius: 15px;
+                    box-shadow: 5px 5px 7px 0px rgba(0,0,0,0.5);
+                    vertical-align: top;
+                    height: 100px;
+                    color:black;
+                }
+                #headerText {
+                    font-size: 32px;
+                    color:palegoldenrod;
+                }
+                #output {
+                    margin-right: 5%;
+                    float: right;
+                    border:1px solid black;
+                    -webkit-box-shadow: 5px 5px 7px 0px rgba(0,0,0,0.75); 
+                    background-color:rgb(69, 62, 133);
+                    border-radius: 15px;
+                    box-shadow: 5px 5px 7px 0px rgba(0,0,0,0.5);
+                    color:white;
+                    width: 60%;
+                    margin-bottom: 20px;
+                    padding: 10px;
+                }
+            
+                #watched {
+                    margin-right: 5%;
+                    float: right;
+                    border:1px solid black;
+                    -webkit-box-shadow: 5px 5px 7px 0px rgba(0,0,0,0.75); 
+                    background-color:rgb(69, 62, 133);
+                    border-radius: 15px;
+                    box-shadow: 5px 5px 7px 0px rgba(0,0,0,0.5);
+                    color:white;
+                    width: 60%;
+                    margin-bottom: 20px;
+                    padding: 10px;
+                    display: none;
+                }
+            
+                #quickFacts {
+                    clear: both;
+                    margin-left: 5%;
+                    float: left;
+                    z-index: -1;
+                    border:1px solid black;
+                    -webkit-box-shadow: 5px 5px 7px 0px rgba(0,0,0,0.75); 
+                    background-color:rgb(69, 62, 133);
+                    border-radius: 15px;
+                    box-shadow: 5px 5px 7px 0px rgba(0,0,0,0.5);
+                    color:white;
+                    text-align: center;
+                    width:25%;
+                    padding-top: 20px;
+                }
+                </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>COVID-19 Stats</title>
+</head>
+<body>
+        <div id="bannerDiv"><img src="img/covid.png" style="float: left;max-width: 70px;margin: 10px;">
+            <div style="height: 25%;margin-top:25px;"><span id="headerText">COVID-19 Tracker</span>
+            </div><br/>
+            <div style="float:right;margin-right: 10px;margin-bottom: 0px;"><span style="color:white;font-size: 18px;">Last Updated (CST):</span> <span id="lastUpdate" style="font-size: 18px;color: white;"></span></div>
+        </div>
+        <div id="quickFacts"><span style="font-size: 48px;color:yellow;" id="areaTitle"></span>
+        <br/>
+        <p/>
+        
+        <span style="font-size: 48px;color: lightblue;margin-top: 30px;" id="globalTotal"></span><br/>
+        Confirmed Cases<p/>
+        <span style="font-size: 48px;color: #F65164;margin-top: 30px" id="deathsTotal"></span><br/>
+        Deceased<p/>
+        <span style="font-size: 48px;color:white;margin-top: 30px" id="recoveredTotal"></span><br/>
+        Recovered<br/>
+        <p/>            
+        <div style="font-size: 10pt;margin-top:30px;margin-bottom: 10px;color:black;">Data is sourced from the 
+                Centers for Disease Control and Prevention, World Health Organization, 
+                and European Centre for Disease Prevention and Control.</div>
+                API Provided by<br>
+                <img src="img/bing.png" style="width:60px;">
+        </div>
+        <div id="watched"></div>
+        <div id="output">Loading Covid-19 Data <img src="img/ajax-loader.gif"></div>
+        <script src="src/jquery-3.4.1.min.js"></script>
+        <script src="src/sorttable.js"></script>
+        <script src="src/main.js"></script>
+    
+</body>
+</html>
