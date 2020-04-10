@@ -8,8 +8,8 @@ let api = "https://cors-anywhere.herokuapp.com/https://bing.com/covid/data";
 let covidData = {};
 
 // set the images for watchlists
-let watching     = "https://www.crazyhappyfuntime.com/covidTracker/img/favoritesStar.png";
-let notWatching  = "https://www.crazyhappyfuntime.com/covidTracker/img/favoritesStarBlack.png";
+let watching     = "https://hbrashid.github.io/covid19/img/favoritesStar.png";
+let notWatching  = "https://hbrashid.github.io/covid19/img/favoritesStarBlack.png";
 
 // check the Local Storage for watched areas
 let watched =  JSON.parse(localStorage.getItem("watched")) || [];
@@ -88,11 +88,11 @@ const displayWatched = () => {
             let totalDeathsChgPercent = ((dataPath.totalDeathsDelta/dataPath.totalDeaths)*100).toFixed(2);
             let totalRecoveredChgPercent = ((dataPath.totalRecoveredDelta/dataPath.totalRecovered)*100).toFixed(2);
 
-    let starPic = "https://www.crazyhappyfuntime.com/covidTracker/img/favoritesStarBlack.png";
+    let starPic = "https://hbrashid.github.io/covid19/img/favoritesStarBlack.png";
 
     for (let lsIdx=0;lsIdx<watched.length;lsIdx++) {
         if (watched[lsIdx].name===dataPath.displayName) {
-            starPic = "https://www.crazyhappyfuntime.com/covidTracker/img/favoritesStar.png";
+            starPic = "https://hbrashid.github.io/covid19/img/favoritesStar.png";
         }
     }
     htmlStr += `<tr><td onclick="watchList('${dataPath.displayName}',${countryIdx},${stateIdx},${countyIdx})"><img src="${starPic}" id="watch${dataPath.displayName}" style="width:15px;height:15px"></td>
@@ -168,11 +168,11 @@ const displayData = (countryIdx,stateIdx,countyIdx) => {
         let totalDeathsChgPercent = ((dataPath.areas[i].totalDeathsDelta/dataPath.areas[i].totalDeaths)*100).toFixed(2);
         let totalRecoveredChgPercent = ((dataPath.areas[i].totalRecoveredDelta/dataPath.areas[i].totalRecovered)*100).toFixed(2);
 
-        let starPic = "https://www.crazyhappyfuntime.com/covidTracker/img/favoritesStarBlack.png";
+        let starPic = "https://hbrashid.github.io/covid19/img/favoritesStarBlack.png";
 
         for (let lsIdx=0;lsIdx<watched.length;lsIdx++) {
             if (watched[lsIdx].name===dataPath.areas[i].displayName) {
-                starPic = "https://www.crazyhappyfuntime.com/covidTracker/img/favoritesStar.png";
+                starPic = "https://hbrashid.github.io/covid19/img/favoritesStar.png";
             }
         }
         // the html for each row 
