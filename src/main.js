@@ -197,9 +197,9 @@ const displayData = (countryIdx,stateIdx,countyIdx) => {
         // update the Stats panel
         let updateDate = new Date(dataPath.lastUpdated)
         let updateStr  = updateDate.toLocaleDateString() + " " + updateDate.toLocaleTimeString();
-        $("#globalTotal").html(dataPath.totalConfirmed);
-        $("#deathsTotal").html(dataPath.totalDeaths);
-        $("#recoveredTotal").html(dataPath.totalRecovered);
+        $("#globalTotal").html(dataPath.totalConfirmed.toLocaleString());
+        $("#deathsTotal").html(dataPath.totalDeaths.toLocaleString());
+        $("#recoveredTotal").html(dataPath.totalRecovered.toLocaleString());
         $("#lastUpdate").html(updateStr);
         $("#areaTitle").html(dataPath.displayName + " Data");
 }
