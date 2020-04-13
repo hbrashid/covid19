@@ -1,6 +1,6 @@
 // the API URL with the CORS-anywhere URL from herokuapp to 
 // avoid CORS errors (Cross-Origin Resource Sharing)
-let api = "https://cors-buster-3--hassanrashid1.repl.co/";
+let api = "https://cors-buster-3--hassanrashid1.repl.co";
 
 // setup an object where we can store the API results
 // so we don't have to make extra API calls but can
